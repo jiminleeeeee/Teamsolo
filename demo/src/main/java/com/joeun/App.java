@@ -18,13 +18,13 @@ public class App extends Application {
     private static Scene scene;
 
     @Override
-    public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("primary"), 640, 480);
+    public void start(Stage stage) throws IOException { /* 시작되는 화면 */
+        scene = new Scene(loadFXML("board/list"));    /* board-list로 시작 화면 설정 */
         stage.setScene(scene);
         stage.show();
     }
 
-    static void setRoot(String fxml) throws IOException {
+    public static void setRoot(String fxml) throws IOException {
         scene.setRoot(loadFXML(fxml));
     }
 
@@ -34,7 +34,7 @@ public class App extends Application {
     }
 
     public static void main(String[] args) {
-        JDBConnection jdbc = new JDBConnection();
+        // JDBConnection jdbc = new JDBConnection();
         launch();
     }
 
